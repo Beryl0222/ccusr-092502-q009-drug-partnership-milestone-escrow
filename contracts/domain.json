@@ -1,0 +1,27 @@
+{
+  "service": "drug-partnership-milestone-escrow",
+  "entities": [
+    "partnership_version",
+    "milestone_claim",
+    "review_signature",
+    "payment_instruction"
+  ],
+  "events": [
+    "CLAIM_SUBMITTED",
+    "EVIDENCE_LOCKED",
+    "SIGNATURE_RECORDED",
+    "PAYMENT_ORDERED",
+    "ADJUSTMENT_SETTLED"
+  ],
+  "envelope": {
+    "required": [
+      "event_id",
+      "event_type",
+      "occurred_at",
+      "aggregate_id",
+      "version",
+      "payload"
+    ],
+    "version_minimum": 1
+  }
+}
