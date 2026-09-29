@@ -1,18 +1,48 @@
 {
   "service": "drug-partnership-milestone-escrow",
+  "rule_freeze_point": "CLAIM_SUBMITTED",
+  "rule_freeze_note": "主张提交时冻结合作版本；证据锁定、审阅截止、币种口径与计费周期归属在之后一律使用该冻结版本，新版本登记不影响在途主张。",
   "entities": [
     "partnership_version",
     "milestone_claim",
+    "evidence_package",
     "review_signature",
+    "dispute",
+    "adjudication",
     "payment_instruction"
   ],
   "events": [
+    "PARTNERSHIP_VERSION_REGISTERED",
     "CLAIM_SUBMITTED",
     "EVIDENCE_LOCKED",
+    "DISPUTE_OPENED",
+    "DISPUTE_RESOLVED",
     "SIGNATURE_RECORDED",
-    "PAYMENT_ORDERED",
-    "ADJUSTMENT_SETTLED"
+    "CLAIM_REJECTED",
+    "ADJUDICATION_OPENED",
+    "ADJUDICATION_SETTLED",
+    "PAYMENT_ORDERED"
   ],
+  "review_scopes": [
+    "scientific",
+    "compliance",
+    "finance"
+  ],
+  "adjudication_reasons": [
+    "DATA_CORRECTION",
+    "REGIONAL_EXIT",
+    "CODEVELOPMENT_OPTION_CHANGE"
+  ],
+  "payment_origins": [
+    "CLAIM",
+    "ADJUDICATION"
+  ],
+  "payment_kinds": [
+    "INITIAL",
+    "ADDITIONAL",
+    "RECOVERY"
+  ],
+  "append_only_note": "事件只追加；已发出的付款指令不可改写，纠正、区域退出与共同开发选择改变只能产生新裁决与差额付款。",
   "envelope": {
     "required": [
       "event_id",
