@@ -3,16 +3,34 @@
   "entities": [
     "partnership_version",
     "milestone_claim",
+    "evidence_lock",
     "review_signature",
+    "adjudication",
     "payment_instruction"
   ],
   "events": [
+    "PARTNERSHIP_VERSION_REGISTERED",
     "CLAIM_SUBMITTED",
     "EVIDENCE_LOCKED",
-    "SIGNATURE_RECORDED",
+    "EVIDENCE_CONFLICT_FLAGGED",
+    "REVIEW_SIGNED",
+    "REVIEW_OBJECTED",
+    "CLAIM_DECIDED",
     "PAYMENT_ORDERED",
+    "CLAIM_REOPENED",
+    "ADJUDICATION_CREATED",
     "ADJUSTMENT_SETTLED"
   ],
+  "enums": {
+    "sign_office": ["science", "compliance", "finance"],
+    "claim_outcome": ["achieved", "not_achieved"],
+    "adjudication_reason": [
+      "data_correction",
+      "territory_exit",
+      "co_development_change"
+    ],
+    "adjustment_direction": ["top_up", "clawback", "none"]
+  },
   "envelope": {
     "required": [
       "event_id",
